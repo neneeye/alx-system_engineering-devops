@@ -1,19 +1,20 @@
 #!/usr/bin/env bash
-# This script  that displays numbers from 1 to 100.
+# This script is used for FizzBuzz game
+n=1
 
-
-for i in {1..100};
+while [ $n -le 100 ]
 do
-    if ((i % 5 == 0)) && ((i % 3 == 0))
+    if [ $(( n % 3 )) -eq 0 -a $(( n % 5 )) -eq 0 ]
     then
         echo "FizzBuzz"
-    elif ((i % 3 == 0))
+    elif [ $(( n % 3 )) -eq 0 ]
     then
         echo "Fizz"
-    elif ((i % 5 == 0))
+    elif [ $(( n % 5 )) -eq 0 ]
     then
         echo "Buzz"
     else
-        echo "$i"
+        echo $n
     fi
+    n=$(( n + 1 ))
 done

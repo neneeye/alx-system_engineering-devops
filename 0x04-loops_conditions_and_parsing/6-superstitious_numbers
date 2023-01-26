@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# a Bash script that displays numbers from 1 to 20 and
+# This script prints "bad luck" 4th iteration, "good luck" on the 8th iteration, and "Holberton School" for other iterations
+n=1
 
-j=1
-while [ $j -le 20 ]
+while [ $n -le 20 ]
 do
-    echo $j
-    case "$j" in
+    echo $n
+    case $n in
         4)
             echo "bad luck from China"
             ;;
@@ -16,8 +16,7 @@ do
             echo "bad luck from Italy"
             ;;
         *)
-        ;;
+            ;;
     esac
-    j=$((j+1))
+    n=$(( n + 1 ))
 done
-j=0

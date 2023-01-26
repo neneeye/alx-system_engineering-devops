@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
-# This script is displaying "Best School" 8 times & bad luck or good luck
+# This script prints "bad luck" 4th iteration, "good luck" on the 8th iteration, and "Best School" for other iterations
+n=1
 
-j=1
-while [ $j -le 10 ]
+while [ $n -le 10 ]
 do
-    if [ "$j" == 4 ]; then
+    if [ $n -eq 4 ]
+    then
         echo "bad luck"
-    elif [ "$j" == 8 ]; then
+    elif [ $n -eq 8 ]
+    then
         echo "good luck"
     else
         echo "Best School"
     fi
-j=$((j+1))
+    n=$(( n + 1 ))
 done
-j=0
