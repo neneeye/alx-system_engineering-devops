@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# A Bash script that displays the content of the file /etc/passwd.
+
+passwd_file=$(cat /etc/passwd)
+while IFS=':' read -ra arr; do
+    username=${arr[0]}
+    user_id=${arr[2]}
+    home_directory=${arr[5]}
+    echo "$username:$user_id:$home_directory"
+done <<< "$passwd_file"
