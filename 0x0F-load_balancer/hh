@@ -1,0 +1,13 @@
+Hello World
+Hello World
+
+frontend haproxy-main
+        bind *:80
+        mode http
+        default_backend task-servers
+
+backend task-servers
+        balance roundrobin
+        server 10718-web-01 3.229.113.226:80 check
+        server 10718-web-02 44.200.142.76:80 check
+
